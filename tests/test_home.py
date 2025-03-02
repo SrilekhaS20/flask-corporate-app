@@ -8,7 +8,7 @@ def client():
     with app.test_client() as client:
         yield client
 
-def test_health_check(client):
-    response = client.get("/health")
+def test_home_page(client):
+    response = client.get("/")
     assert response.status_code == 200
-    assert b'"status":"ok"' in response.data
+    assert b"Welcome to Flask Corporate App" in response.data

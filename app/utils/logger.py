@@ -1,13 +1,13 @@
 import logging
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.FileHandler("app.log"),  # Log to a file
-        logging.StreamHandler()  # Log to console
-    ]
-)
+logger = logging.getLogger("flask-app")
+logger.setLevel(logging.INFO)
 
-logger = logging.getLogger(__name__)
+handler = logging.StreamHandler()
+formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+handler.setFormatter(formatter)
+
+logger.addHandler(handler)
+
+def setup_logger():
+    return logger

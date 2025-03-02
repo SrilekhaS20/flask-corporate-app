@@ -1,8 +1,9 @@
 from flask import jsonify
 import traceback
-from app.utils.logger import logger
 
 def register_error_handlers(app):
+    from app.utils.logger import logger
+    
     @app.errorhandler(404)
     def not_found_error(error):
         response = {
