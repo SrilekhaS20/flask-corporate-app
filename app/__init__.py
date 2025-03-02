@@ -1,6 +1,7 @@
 from flask import Flask
 from config import Config
-import logging
+from app.routes import main
+from app.utils.error_handler import register_error_handlers
 
 def create_app():
     app = Flask(__name__)
@@ -8,5 +9,6 @@ def create_app():
 
     from app.routes import main
     app.register_blueprint(main)
+    register_error_handlers(app)
 
     return app
