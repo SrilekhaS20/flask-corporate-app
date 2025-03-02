@@ -44,3 +44,11 @@ pytest tests/
 ```
 
 #### Ensure that pytest is installed via pip install pytest.
+
+## 🤝 Contributing
+### Want to contribute? Fork the repo and submit a PR.
+
+#### Fork the repository
+#### Create a feature branch
+#### Commit changes
+#### Submit a pull request 🚀
