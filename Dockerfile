@@ -7,6 +7,8 @@ RUN pip install --no-cache-dir --prefix=/install -r requirements.txt
 # Production Stage
 FROM python:3.9-slim
 WORKDIR /app
+RUN adduser --disabled-password --gecos "" appuser
+USER appuser
 COPY --from=builder /install /usr/local
 COPY . .
 RUN pip show gunicorn
